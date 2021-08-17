@@ -33,10 +33,10 @@ addonSdk.init().then((ctx) => {
   setTimeout(() => {
     counter++;
     addonSdk.decorate(counter.toString(), "badge");
-  }, 10 * 5000);
+  }, 5 * 1000);
 
   setTimeout(() => {
     counter++;
     addonSdk.notify("Notification #" + counter, "info");
-  }, 10 * 10000);
+  }, 3 * 1000);
 });
