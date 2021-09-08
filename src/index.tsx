@@ -27,16 +27,18 @@ reportWebVitals();
 let counter = 1;
 
 addonSdk.init().then((ctx) => {
-  console.debug("[HelloWorld] addonSdk.initialized", { ctx });
+  console.info("[CXT][Beacon] addonSdk.initialized", { ctx });
   addonSdk.decorate(counter.toString(), "badge");
 
   setTimeout(() => {
     counter++;
+    console.info("[CXT][Beacon] addonSdk.decorate", { counter });
     addonSdk.decorate(counter.toString(), "badge");
   }, 5 * 1000);
 
   setTimeout(() => {
     counter++;
+    console.info("[HelloWorld] addonSdk.notify", { counter });
     addonSdk.notify("Notification #" + counter, "info");
   }, 3 * 1000);
 });
